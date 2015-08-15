@@ -4,15 +4,16 @@ html, body {
 a, a:visited {
 	color: $brandcolour;
 	text-decoration: none;
+	transition: color 150ms linear;
 }
 a:hover {
-	color: saturate($brandcolour, 80%);
+	color: saturate($branddark, 80%);
 	text-decoration: none;
 }
 
 header#masthead {
 		padding: 0.3em 0;
-		border-bottom: 1px lighten($branddark, 50%) solid;
+		border-bottom: 1px lighten($branddark, 70%) solid;
 }
 
 nav#site-navigation {
@@ -20,21 +21,60 @@ nav#site-navigation {
 }
 
 footer#colophon {
-		border-top: 1px lighten($branddark, 50%) solid;
+		border-top: 1px lighten($branddark, 70%) solid;
 		text-align: center;
 		padding-top: 1em;
 		padding-bottom: 1em;
 }
 
 .site-title {
-
 	text-align: center;
 	text-decoration: none;
 	font-size: 4em;
 	font-weight: 100;
 	margin: 0;
-
+	span {
+		color: $branddark;
+	}
 	a {
 		color: $brandcolour;
+	}
+}
+
+article.podcast {
+	background-color: $offwhite;
+	padding: 10px;
+}
+
+.podcast-billboard {
+	width: 100%;
+	height: 150px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	h2 {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		font-weight: 300;
+		left: 0px;
+		padding: 10px;
+		margin: 0px;
+		a, a:visited, a:focus {
+			color: white;
+		}
+	}
+	img {
+		min-width: 120%;
+		filter: blur(8px);
+		margin: -8px;
+	}
+	.billboard-bg {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		filter: blur(8px);
+		width: 100%;
+		height: 100%;
 	}
 }
