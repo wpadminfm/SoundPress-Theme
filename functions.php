@@ -80,16 +80,6 @@ function soundpress_setup() {
 endif; // soundpress_setup
 add_action( 'after_setup_theme', 'soundpress_setup' );
 
-add_filter( 'pre_get_posts', 'my_get_posts' );
-
-function my_get_posts( $query ) {
-
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'post', 'podcast' ) );
-
-	return $query;
-}
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
