@@ -1,0 +1,25 @@
+{
+  "name": "n-setup",
+  "version": "0.0.0",
+  "authors": [
+    "Charlie.Tapster <nervewax@gmail.com>"
+  ],
+  "description": "Nervewax basic setup.",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "http://nervewax.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

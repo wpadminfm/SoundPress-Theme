@@ -1,0 +1,40 @@
+html, body {
+	font-weight: 300;
+}
+a, a:visited {
+	color: $brandcolour;
+	text-decoration: none;
+}
+a:hover {
+	color: saturate($brandcolour, 80%);
+	text-decoration: none;
+}
+
+header#masthead {
+		padding: 0.3em 0;
+		border-bottom: 1px lighten($branddark, 50%) solid;
+}
+
+nav#site-navigation {
+	text-align: center;
+}
+
+footer#colophon {
+		border-top: 1px lighten($branddark, 50%) solid;
+		text-align: center;
+		padding-top: 1em;
+		padding-bottom: 1em;
+}
+
+.site-title {
+
+	text-align: center;
+	text-decoration: none;
+	font-size: 4em;
+	font-weight: 100;
+	margin: 0;
+
+	a {
+		color: $brandcolour;
+	}
+}
