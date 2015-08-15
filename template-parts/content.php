@@ -17,6 +17,7 @@
 		<div class="blur-img">
 			<?php the_post_thumbnail(); ?>
 		</div>
+		<?php $podcast_duration = get_post_meta( get_the_ID(), 'podcast_duration', true ); ?>
 		<h2><i class="ion-music-note"></i><?php the_title(); ?> [<?php echo $podcast_duration; ?>]</h2>
 	</div>
 	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
