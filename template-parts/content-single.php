@@ -10,7 +10,6 @@
 ?>
 
 <?php if ( 'podcast' == get_post_type( get_the_ID() ) ) { ?>
-	<a href="<?php the_permalink()?>">
 	<div class="podcast-billboard">
 		<div class="billboard-content">
 
@@ -23,7 +22,6 @@
 	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 	<div class="album-art" style="background-image: url('<?php echo $image[0]; ?>')"></div>
 	</div>
-	</a>
 	<div class="podcast-meta">
 		<p>
 			<?php $podcast_download = get_post_meta( get_the_ID(), 'podcast_download_url', true ); ?>
