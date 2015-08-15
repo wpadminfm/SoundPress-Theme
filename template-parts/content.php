@@ -10,10 +10,9 @@
 ?>
 
 <?php if ( 'podcast' == get_post_type( get_the_ID() ) ) { ?>
-	<a href="<?php the_permalink()?>">
+	<a class="main-link" href="<?php the_permalink()?>">
 	<div class="podcast-billboard">
 		<div class="billboard-content">
-
 		<div class="blur-img">
 			<?php the_post_thumbnail(); ?>
 		</div>

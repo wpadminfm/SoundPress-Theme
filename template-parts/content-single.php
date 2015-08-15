@@ -12,7 +12,6 @@
 <?php if ( 'podcast' == get_post_type( get_the_ID() ) ) { ?>
 	<div class="podcast-billboard">
 		<div class="billboard-content">
-
 		<div class="blur-img">
 			<?php the_post_thumbnail(); ?>
 		</div>
