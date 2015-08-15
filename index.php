@@ -19,23 +19,47 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
-
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
+				<?php if ( 'podcast' == get_post_type( get_the_ID() ) ) { ?>
+					<div class="podcast-billboard">
+						<?php the_post_thumbnail(); ?>
+						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+					</div>
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<header class="entry-header">
+							<?php if ( 'post' == get_post_type() ) : ?>
+							<div class="entry-meta">
+								<?php soundpress_posted_on(); ?>
+							</div><!-- .entry-meta -->
+							<?php endif; ?>
+						</header><!-- .entry-header -->
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
+						<div class="entry-content">
+							<?php
+								the_content( sprintf(
+									/* translators: %s: Name of current post. */
+									wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'soundpress' ), array( 'span' => array( 'class' => array() ) ) ),
+									the_title( '<span class="screen-reader-text">"', '"</span>', false )
+								) );
+							?>
+
+							<?php
+								wp_link_pages( array(
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'soundpress' ),
+									'after'  => '</div>',
+								) );
+							?>
+						</div><!-- .entry-content -->
+
+						<footer class="entry-footer">
+							<?php soundpress_entry_footer(); ?>
+						</footer><!-- .entry-footer -->
+					</article><!-- #post-## -->
+				<?php } else {
 					get_template_part( 'template-parts/content', get_post_format() );
+				}
 				?>
 
 			<?php endwhile; ?>
