@@ -27,7 +27,11 @@
 	<div class="podcast-meta">
 		<p>
 			<?php $podcast_download = get_post_meta( get_the_ID(), 'podcast_download_url', true ); ?>
-			<a href="<?php echo $podcast_download; ?>"><i class="ion-android-download"></i>Download</a>
+			<?php 	
+					$soundpress_options = get_option( 'soundpress_option_name' );
+					$client_id 	= $soundpress_options['soundcloud_oauth_client_id_0'];
+			?>
+			<a href="<?php echo $podcast_download; ?>?client_id=<?php echo $client_id; ?>"<i class="ion-android-download"></i>Download</a>
 		</p>
 	</div>
 <?php } else { ?>
