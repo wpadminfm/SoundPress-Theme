@@ -32,7 +32,7 @@
 		<div class="site-branding">
 			<?php if ( get_header_image() ) {
 				?>
-				<p class="site-title"><img src="<?php header_image(); ?>" /></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" /></a></p>
 				<?php
 
 			} else { 

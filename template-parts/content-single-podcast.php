@@ -22,7 +22,7 @@
 			?>
 		</div>
 		
-		<h2><?php the_title(); ?></h2>
+		<h2><i class="ion-music-note"></i><?php the_title(); ?></h2>
 	</div>
 	<?php
 	if ( has_post_thumbnail() ) {
@@ -33,7 +33,9 @@
 	<div class="album-art" style="background-image: url('<?php echo $image[0]; ?>')"></div>
 	</div>
 	<div class="podcast-meta">
-		
+		<p>
+			<?php echo do_shortcode( '[podcast_episode episode="'.get_the_ID().'" content="player"]' ); ?>
+		</p>
 	</div>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="entry-content">
@@ -63,5 +65,4 @@
 					comments_template();
 				endif;
 			?>
-		
 	</article><!-- #post-## -->

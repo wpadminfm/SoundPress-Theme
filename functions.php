@@ -130,6 +130,9 @@ function soundpress_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'soundpress_scripts' );
 
+
+add_image_size( 'podcast-art', 200, 200, true );
+
 /**
  * Implement the Custom Header feature.
  */
@@ -154,3 +157,9 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Load WP Admin Stuff.
+ */
+require get_template_directory() . '/inc/wpadminfm.php';

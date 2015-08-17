@@ -23,3 +23,44 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .sticky {}          /* JUST */
 .gallery-caption {} /* FOR */
 .bypostauthor {}    /* THEMECHECK */
+
+
+article.post, article.page, article.podcast {
+	width: 75%;
+	float: left;
+}
+
+.widget-area {
+	width: 25%;
+	float: right;
+	padding: 1.5em 10px;
+}
+
+.podcast-meta .podcast_player a {
+	border: none;
+}
+
+.podcast-billboard .album-art {
+    background-size: contain !important;
+}
+
+.widget-area ul {
+	list-style-type: none;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+@media (max-width: 770px) {
+
+	article.post, article.page, article.podcast {
+		width: auto;
+		float: none;
+	}
+
+	.widget-area {
+		text-align: center;
+		float: none;
+		width: auto;
+	}
+
+}
